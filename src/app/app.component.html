@@ -1,4 +1,12 @@
-<mat-toolbar color="primary">{{title}}</mat-toolbar>
+<mat-toolbar color="primary">
+  <span>{{title}}</span>
+  <span class="toolbarSpacer"></span>
+  <span class="buttonRow">
+      <button mat-button>Home</button>
+      <button mat-button>Gallery</button>
+      <button mat-button>Sign out</button>
+  </span>
+</mat-toolbar>
 <div class="root">
   <h1 class="mat-headline">
     Welcome to {{title}}!
