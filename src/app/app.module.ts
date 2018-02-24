@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { DeleteConfirmationComponent } from './delete-confirmation/delete-confirmation.component';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 
@@ -24,6 +25,7 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
     MatButtonModule,
     MatDialogModule,
     MatMenuModule,
+    MatToolbarModule,
     FormsModule
   ],
   providers: [],
