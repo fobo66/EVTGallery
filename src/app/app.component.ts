@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { DeleteConfirmationComponent } from './delete-confirmation/delete-confirmation.component';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
+import { Image } from './image';
 
 @Component({
   selector: 'app-root',
@@ -85,10 +86,4 @@ export class AppComponent {
       this.images = this.images.slice();
     }
   }
-}
-
-export interface Image {
-  name: string;
-  url: string;
-  description: string;
 }
