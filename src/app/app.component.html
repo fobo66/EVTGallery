@@ -26,8 +26,14 @@
   <h2 class="mat-h2">Input image URLs: </h2>
   <form>
     <mat-form-field class="formItem">
+      <input #nameInput matInput placeholder="Title" />
+    </mat-form-field>
+    <mat-form-field class="formItem">
       <input #urlInput matInput placeholder="Image URL" />
     </mat-form-field>
-    <button mat-button (click)="addImage(urlInput.value)">Add</button>
+    <mat-form-field class="formItem">
+      <input #descriptionInput matInput placeholder="Description" />
+    </mat-form-field>
+    <button mat-button (click)="addImage(nameInput.value, urlInput.value, descriptionInput.value)">Add</button>
   </form>
 </div>

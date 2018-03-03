@@ -6,8 +6,11 @@
   <mat-form-field>
     <input #urlInput matInput type="text" name="imageUrl" placeholder="URL" id="url" [value]="data.image.url"/>
   </mat-form-field>
+  <mat-form-field>
+    <input #descriptionInput matInput type="text" name="imageDescription" placeholder="Description" id="description" [value]="data.image.description"/>
+  </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions>
   <button mat-button (click)="onCancelClick()">Cancel</button>
-  <button mat-button (click)="onSaveClick(nameInput.value, urlInput.value)">Save</button>
+  <button mat-button (click)="onSaveClick(nameInput.value, urlInput.value, descriptionInput.value)">Save</button>
 </mat-dialog-actions>

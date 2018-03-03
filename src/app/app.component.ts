@@ -16,10 +16,11 @@ export class AppComponent {
   public images: Array<Image> = [];
 
 
-  public addImage(url: string) {
+  public addImage(name: string, url: string, description: string) {
     this.images.push({
-      name: '',
-      url: url
+      name: name,
+      url: url,
+      description: description
     });
   }
 
@@ -89,4 +90,5 @@ export class AppComponent {
 export interface Image {
   name: string;
   url: string;
+  description: string;
 }

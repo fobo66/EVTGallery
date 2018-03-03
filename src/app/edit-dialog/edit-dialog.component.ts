@@ -20,13 +20,14 @@ export class EditDialogComponent implements OnInit {
     });
   }
 
-  onSaveClick(name: string, url: string) {
+  onSaveClick(name: string, url: string, description: string) {
     this.dialogRef.close({
       ok: true,
       index: this.data.index,
       image: {
         name: name,
-        url: url
+        url: url,
+        description: description
       }
     });
   }
