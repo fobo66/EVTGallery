@@ -1,15 +1,14 @@
-<mat-toolbar color="primary">
-  <span>{{title}}</span>
-  <span class="toolbarSpacer"></span>
-  <span class="buttonRow">
+<div class="container">
+  <mat-toolbar color="primary">
+    <span>{{title}}</span>
+    <span class="toolbarSpacer"></span>
+    <span class="buttonRow">
       <button mat-button routerLink="">Home</button>
       <button mat-button routerLink="/gallery">Gallery</button>
       <button mat-button>Sign out</button>
-  </span>
-</mat-toolbar>
-<div class="root">
-  <h1 class="mat-headline">
-    Welcome to {{title}}!
-  </h1>
-  <router-outlet></router-outlet>
+    </span>
+  </mat-toolbar>
+  <div class="root">
+    <router-outlet></router-outlet>
+  </div>
 </div>
