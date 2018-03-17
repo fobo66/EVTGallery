@@ -2,8 +2,8 @@
   <span>{{title}}</span>
   <span class="toolbarSpacer"></span>
   <span class="buttonRow">
-      <button mat-button>Home</button>
-      <button mat-button>Gallery</button>
+      <button mat-button routerLink="">Home</button>
+      <button mat-button routerLink="/gallery">Gallery</button>
       <button mat-button>Sign out</button>
   </span>
 </mat-toolbar>
@@ -11,29 +11,5 @@
   <h1 class="mat-headline">
     Welcome to {{title}}!
   </h1>
-  <div class="images">
-    <div class="image" *ngFor="let image of images">
-      <mat-menu #appMenu="matMenu">
-        <button mat-menu-item (click)="editImage(images.indexOf(image), image)">Edit</button>
-        <button mat-menu-item (click)="deleteImage(images.indexOf(image))">Delete</button>
-        <button mat-menu-item (click)="moveForward(images.indexOf(image))">Move forward</button>
-        <button mat-menu-item (click)="moveBackward(images.indexOf(image))">Move backward</button>
-      </mat-menu>
-      <a href="#" class="close" (click)="deleteImage(images.indexOf(image))"></a>
-      <img alt="{{image.name}}" src="{{image.url}}" [matMenuTriggerFor]="appMenu">
-    </div>
-  </div>
-  <h2 class="mat-h2">Input image URLs: </h2>
-  <form>
-    <mat-form-field class="formItem">
-      <input #nameInput matInput placeholder="Title" />
-    </mat-form-field>
-    <mat-form-field class="formItem">
-      <input #urlInput matInput placeholder="Image URL" />
-    </mat-form-field>
-    <mat-form-field class="formItem">
-      <input #descriptionInput matInput placeholder="Description" />
-    </mat-form-field>
-    <button mat-button (click)="addImage(nameInput.value, urlInput.value, descriptionInput.value)">Add</button>
-  </form>
+  <router-outlet></router-outlet>
 </div>

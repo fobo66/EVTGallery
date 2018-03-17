@@ -14,13 +14,16 @@ import { AppComponent } from './app.component';
 import { DeleteConfirmationComponent } from './delete-confirmation/delete-confirmation.component';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { MainComponent } from './main/main.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DeleteConfirmationComponent,
     EditDialogComponent,
-    MainComponent
+    MainComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,9 @@ import { MainComponent } from './main/main.component';
     MatDialogModule,
     MatMenuModule,
     MatToolbarModule,
-    FormsModule
+    MatExpansionModule,
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   entryComponents: [
