@@ -4,8 +4,15 @@
     <span class="toolbarSpacer"></span>
     <span class="buttonRow">
       <button mat-button routerLink="">Home</button>
-      <button mat-button routerLink="/gallery">Gallery</button>
-      <button mat-button>Sign out</button>
+      <button mat-button *ngIf="isLoggedIn" routerLink="/gallery">Gallery</button>
+      <button mat-button *ngIf="isLoggedIn" (click)="signOut()">Sign out</button>
+      <mat-form-field *ngIf="!isLoggedIn">
+        <input #loginInput matInput placeholder="Login"/>
+      </mat-form-field>
+      <mat-form-field *ngIf="!isLoggedIn">
+        <input #passwordInput matInput placeholder="Password" type="password"/>
+      </mat-form-field>
+      <button mat-button *ngIf="!isLoggedIn" (click)="login()">Log in</button>
     </span>
   </mat-toolbar>
   <div class="root">

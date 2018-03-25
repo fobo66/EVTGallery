@@ -8,4 +8,14 @@ import { Image } from './image';
 })
 export class AppComponent {
   title = 'F1 Gallery';
+
+  isLoggedIn = false;
+
+  login() {
+    this.isLoggedIn = true;
+  }
+
+  signOut() {
+    this.isLoggedIn = false;
+  }
 }
