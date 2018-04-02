@@ -11,6 +11,9 @@ export class AppComponent {
 
   isLoggedIn = false;
 
+  private adminLogin = 'admin';
+  private adminPassword = 'admin';
+
   login() {
     this.isLoggedIn = true;
   }
