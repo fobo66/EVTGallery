@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
 
@@ -34,6 +35,7 @@ import { GalleryComponent } from './gallery/gallery.component';
     MatMenuModule,
     MatToolbarModule,
     MatExpansionModule,
+    MatSnackBarModule,
     FormsModule,
     AppRoutingModule
   ],

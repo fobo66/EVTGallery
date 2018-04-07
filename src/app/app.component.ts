@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Image } from './image';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-root',
@@ -17,21 +18,30 @@ export class AppComponent {
   private adminLogin = 'admin';
   private adminPassword = 'admin';
 
+  constructor(public snackbar: MatSnackBar) {}
+
   login(login: string, password: string) {
     this.credentials.forEach((value: string, key: string, map: Map<string, string>) => {
       if (this.compareCredentials(key, login) && this.compareCredentials(value, password)) {
         this.isLoggedIn = true;
+        this.snackbar.open(`Hello!`);
       }
     });
 
     if (this.compareCredentials(this.adminLogin, login) && this.compareCredentials(this.adminPassword, password)) {
       this.isLoggedIn = true;
       this.isAdmin = true;
+      this.snackbar.open(`All hail to the admin!`);
     }
   }
 
   signOut() {
     this.isLoggedIn = false;
+    if (this.isAdmin) {
+      this.isAdmin = false;
+    }
+
+    this.snackbar.open(`Bye!`);
   }
 
   private compareCredentials(expected: string, given: string): boolean {
