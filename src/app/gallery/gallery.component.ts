@@ -16,6 +16,9 @@ export class GalleryComponent {
 
   public images: Array<Image> = [];
 
+  public showPreviewModal() {
+    // TODO: figure out how to implement this
+  }
 
   public addImage(name: string, url: string, description: string) {
     this.images.push({

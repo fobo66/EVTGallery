@@ -1,13 +1,17 @@
 <div class="images">
   <div class="image" *ngFor="let image of images">
-    <mat-menu #appMenu="matMenu">
-      <button mat-menu-item (click)="editImage(images.indexOf(image), image)">Edit</button>
-      <button mat-menu-item (click)="deleteImage(images.indexOf(image))">Delete</button>
-      <button mat-menu-item (click)="moveForward(images.indexOf(image))">Move forward</button>
-      <button mat-menu-item (click)="moveBackward(images.indexOf(image))">Move backward</button>
-    </mat-menu>
-    <a href="#" class="close" (click)="deleteImage(images.indexOf(image))"></a>
-    <img alt="{{image.name}}" src="{{image.url}}" [matMenuTriggerFor]="appMenu">
+    <img class="thumbnailImage" alt="{{image.name}}" src="{{image.url}}" width="200px" height="200px">
+    <div id="myModal" class="imagePreviewModal">
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item (click)="editImage(images.indexOf(image), image)">Edit</button>
+        <button mat-menu-item (click)="deleteImage(images.indexOf(image))">Delete</button>
+        <button mat-menu-item (click)="moveForward(images.indexOf(image))">Move forward</button>
+        <button mat-menu-item (click)="moveBackward(images.indexOf(image))">Move backward</button>
+      </mat-menu>
+      <span class="close" (click)="deleteImage(images.indexOf(image))">&times;</span>
+      <img class="imagePreviewModalContent" [matMenuTriggerFor]="appMenu">
+      <div id="imagePreviewModalCaption"></div>
+    </div>
   </div>
 </div>
 <h2 class="mat-h2">Input image URLs: </h2>
