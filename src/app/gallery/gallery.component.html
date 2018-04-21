@@ -1,16 +1,17 @@
 <div class="images">
   <div class="image" *ngFor="let image of images">
-    <img class="thumbnailImage" alt="{{image.name}}" src="{{image.url}}" width="200px" height="200px">
-    <div id="myModal" class="imagePreviewModal">
+    <img class="thumbnailImage" alt="{{image.name}}" src="{{image.url}}" width="200px" height="200px"
+    [class.jpeg]="isJpeg(image.url)" [class.png]="isPng(image.url)" (click)="togglePreviewModal(image)">
+    <div id="myModal" class="imagePreviewModal" [hidden]="!image.isPreviewShown">
       <mat-menu #appMenu="matMenu">
         <button mat-menu-item (click)="editImage(images.indexOf(image), image)">Edit</button>
         <button mat-menu-item (click)="deleteImage(images.indexOf(image))">Delete</button>
         <button mat-menu-item (click)="moveForward(images.indexOf(image))">Move forward</button>
         <button mat-menu-item (click)="moveBackward(images.indexOf(image))">Move backward</button>
       </mat-menu>
-      <span class="close" (click)="deleteImage(images.indexOf(image))">&times;</span>
-      <img class="imagePreviewModalContent" [matMenuTriggerFor]="appMenu">
-      <div id="imagePreviewModalCaption"></div>
+      <span class="close" (click)="togglePreviewModal(image)">&times;</span>
+      <img class="imagePreviewModalContent" [matMenuTriggerFor]="appMenu" alt="{{image.name}}" src="{{image.url}}">
+      <div id="imagePreviewModalCaption">{{image.name}}</div>
     </div>
   </div>
 </div>
